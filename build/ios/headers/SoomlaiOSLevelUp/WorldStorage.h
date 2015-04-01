@@ -16,7 +16,7 @@
 
 @interface WorldStorage : NSObject
 
-+ (void)initLevelUp:(NSDictionary *)metadata;
++ (void)initLevelUp;
 
 + (void)setCompleted:(BOOL)completed forWorld:(NSString *)worldId;
 
@@ -26,6 +26,18 @@
 
 + (void)setReward:(NSString*)rewardId forWorld:(NSString *)worldId;
 
++ (void)setReward:(NSString*)rewardId forWorld:(NSString *)worldId andNotify:(BOOL)notify;
+
 + (NSString*)getAssignedReward:(NSString *)worldId;
+
++ (void)setLastCompletedInnerWorld:(NSString*)innerWorldId forWorld:(NSString *)worldId;
+
++ (void)setLastCompletedInnerWorld:(NSString*)innerWorldId forWorld:(NSString *)worldId andNotify:(BOOL)notify;
+
++ (NSString*)getLastCompletedInnerWorld:(NSString *)worldId;
+
++ (BOOL)isLevel:(NSString *)worldId;
+
++ (NSString *)keyWorldPrefix;
 
 @end
